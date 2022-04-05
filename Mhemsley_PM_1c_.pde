@@ -4,8 +4,8 @@ PVector location;
 PVector velocity;  
 
 Mover() { 
-  location = new PVector(0,100); 
-  velocity = new PVector(1,0); 
+  location = new PVector(100,400); 
+  velocity = new PVector(1.5,-2.1); 
 }
 
 void update() { 
@@ -27,6 +27,9 @@ void display() {
 
 
 
+
+
+
 Mover m1; 
 
 void setup() { 
@@ -36,4 +39,9 @@ void setup() {
 
 void draw () { 
   background(255); 
+  m1.update();
+  m1.display();
+}
+
+  
   
