@@ -1,29 +1,27 @@
 PVector location; 
 PVector velocity;  
-PVector Mlocation; 
-PVector Mvelocity; 
+PVector gravity; 
 
-Mover () { 
-  location = new PVector() 
-  velocity = new PVector()  
-  Mlocation = new PVector() 
-  Mvelocity = new PVector() 
+void setup() { 
+  size(400,400); 
+  location = new PVector(100,400);
+  velocity = new PVector(1.5,-2.1);
+  gravity = new PVector(0,0.2);
+}
+void draw() { 
+  background(255);
+  stroke(0);
+  strokeWeight(2);
+  ellipse(200,location.y,20,20);
+  
+  if (mousePressed == true)
+  location.add(velocity);
+  
+  if ((location.y > height) || (location.y < 0)) {
+    velocity.y = velocity.y * -1;
+  
+  
+  } 
 } 
-void update () {
-  location.add(velocity); 
-  Mlocation.add(Mvelocity); 
-} 
-void display() { 
-  stroke(0); 
-  fill(175); 
-  ellipse(location.x,200,20,20); 
-  ellipse(Mlocation.x,200,20,20); 
 
-
-void setup () { 
-  size(400,400);  
-} 
-
-void draw () {
-  background(255); 
-} 
+  
