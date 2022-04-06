@@ -20,3 +20,32 @@ s2.x = mouseX;
 } 
 
   
+  
+  
+  
+class Shape { 
+  float x,y; 
+  float l; 
+  float r; 
+  Shape(float x_,float y_,float l_) { 
+    x = x_; 
+    y = y_;  
+    l = l_;
+  } 
+  
+  void display(){ 
+    stroke(0); 
+    fill(0); 
+    rect (x, y, s2.x, s2.y);
+    ellipse (x,y,r,r);
+  } 
+  
+  boolean overlaps(Shape s2) { 
+    float d = dist(x,y,s2.x,s2.y); 
+    if (d < l + s2.l) { 
+      return true;  
+    } else { 
+      return false; 
+    } 
+  } 
+} 
